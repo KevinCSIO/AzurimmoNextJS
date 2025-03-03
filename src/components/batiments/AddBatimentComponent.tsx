@@ -1,6 +1,6 @@
 import Batiment from "@/models/Batiment";
-import {Form} from "antd";
-import {Input} from "react-daisyui";
+import {Divider, Form} from "antd";
+import {Button, Input} from "react-daisyui";
 import {useState} from "react";
 
 export default function AddBatimentComponent({...props}:{batiment:Batiment}) {
@@ -10,6 +10,12 @@ export default function AddBatimentComponent({...props}:{batiment:Batiment}) {
         <>
             <Form>
                 <Input placeholder={"Adresse"} value={batiment.adresse}/>
+            <Divider/>
+                <div className="flex justify-between">
+                    <Button onClick={()=>{
+
+                    }} value={"Annuler"}/>
+                </div>
             </Form>
 
         </>

@@ -20,13 +20,12 @@ const [showAddDialog, setShowAddDialog] = useState<boolean>(false);
             setShowAddDialog(true);
         }}>Ajouter</Button><br/>
         {showAddDialog && <AddBatimentComponent batiment={{}}/>}
-        <Link href={"/public"}>Retour à l'accueil</Link>
-
-        <ul>
-            <Alert status={"warning"}>Attention, vous allez supprimer un bâtiment.</Alert>
+        <Link href={"/public"}><Button>Retour à l'accueil</Button></Link>
+        {!showAddDialog && <ul>
             {batiments.map((batiment:Batiment) =><li key={batiment.id}>
                 {batiment.adresse} {batiment.ville} <span onClick={
                 ()=> {
+                    <Alert status={"warning"}>Attention, vous allez supprimer un bâtiment.</Alert>
                     HttpService.delete(API_URL.batiments + batiment.id).then((response) => {
                         if(response) {
                             const newBatiments = batiments.filter((b: Batiment) => b.id !== batiment.id);
@@ -37,7 +36,7 @@ const [showAddDialog, setShowAddDialog] = useState<boolean>(false);
             }>X</span>
             </li>)
             }
-        </ul>
+        </ul>}
     </>
 )
 }
