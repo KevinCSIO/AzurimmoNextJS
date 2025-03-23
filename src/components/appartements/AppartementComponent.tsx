@@ -20,7 +20,7 @@ export default function AppartementComponent({...props}:{appartements:Appartemen
                     {appartement.description} {appartement.nbre_pieces} {appartement.numero} {appartement.surface} <span onClick={
                     ()=> {
                         <Alert status={"warning"}>Attention, vous allez supprimer un bâtiment.</Alert>
-                        HttpService.delete(API_URL.batiments + appartement.id).then((response) => {
+                            HttpService.delete(API_URL.appartements + appartement.id).then((response) => {
                             if(response) {
                                 const newAppartements = appartements.filter((a: Appartement) => a.id !== appartement.id);
                                 setAppartements(newAppartements);
