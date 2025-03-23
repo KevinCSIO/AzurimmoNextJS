@@ -20,7 +20,7 @@ const [showAddDialog, setShowAddDialog] = useState<boolean>(false);
             setShowAddDialog(true);
         }}>Ajouter</Button><br/>
         {showAddDialog && <AddBatimentComponent batiment={{}}/>}
-        <Link href={"/public"}><Button>Retour à l'accueil</Button></Link>
+        <Link href={"/"}><Button>Retour à l'accueil</Button></Link>
         {!showAddDialog && <ul>
             {batiments.map((batiment:Batiment) =><li key={batiment.id}>
                 {batiment.adresse} {batiment.ville} <span onClick={
