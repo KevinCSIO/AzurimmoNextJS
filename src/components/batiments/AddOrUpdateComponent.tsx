@@ -5,7 +5,7 @@ import {useState} from "react";
 import HttpService from "@/services/HttpService";
 import API_URL from "@/app/constants/ApiUrl";
 
-export default function AddBatimentComponent({...props}:{
+export default function AddOrUpdateBatimentComponent({...props}:{
     batiment:Batiment,
     onSubmit:(batiment:Batiment)=>void,
     onClose:(show:boolean)=>void

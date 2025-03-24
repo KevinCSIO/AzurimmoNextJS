@@ -9,13 +9,22 @@ export default class HttpService {
         return await response.json();
     }
 
-    static async post(url: string, data: any) {
+    private static async request(method:string, url: string, data: any, headers?: any) {
+        const rHeaders={...headers, 'Content-Type': 'application/json'}; //...headers : copie de l'objet
         const response = await fetch(url, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: rHeaders,
             body: JSON.stringify(data),
         });
         return await response.json();
+    }
+
+    static async post(url: string, data: any, headers?: any) {
+        return this.request('POST', url, data, {headers: headers});
+    }
+
+    static async put(url: string, data: any, headers?: any) {
+        return this.request('PUT', url, data, {headers: headers});
     }
 
 }

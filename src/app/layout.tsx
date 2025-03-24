@@ -28,7 +28,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+            <aside>
+                <p>Copyright © {new Date().getFullYear()} - Azurimmo</p>
+            </aside>
+        </footer>
       </body>
+
     </html>
+
   );
 }

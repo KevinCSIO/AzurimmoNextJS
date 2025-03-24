@@ -1,5 +1,5 @@
-export default interface Batiment {
-    id: number;
-    adresse: string;
-    ville: string;
+export default class Batiment {
+    id: number = 0;
+    adresse: string = "";
+    ville: string = "";
 }
